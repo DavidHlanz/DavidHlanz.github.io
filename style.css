@@ -1,0 +1,63 @@
+/* Estilos generales */
+body {
+    font-family:Verdana;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+}
+
+/* Estilos del contenedor */
+
+.container {
+    width: 400px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Estilos del tablero */
+
+.tablero {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+/* Estilos de las casillas */
+
+.casilla {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 100px;
+    font-size: 36px;
+    margin-top: 10px;
+}
+
+
+/* Fondo degradado */
+
+.container {
+    background: linear-gradient(to right, #f77062, #ff974a);
+}
+
+#reset {
+    font-size: 16px;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    position: absolute;
+    top: 10px;
+    left: 300px;
+}
+
