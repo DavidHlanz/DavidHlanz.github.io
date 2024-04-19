@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biografías - Festival Internacional Música y Danza de Granada</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit:300,700"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/logo sin fondo.png" />
+  </head>
+  <script>
+    const eventos = [
+      {
+        nombre: "Gustav Mahler Jugendorchester",
+        fecha: new Date(2024, 5, 7),
+        enlace: "#7",
+      },
+      {
+        nombre: "Ballet Nacional de España",
+        fecha: new Date(2024, 5, 8),
+        enlace: "#8",
+      },
+      {
+        nombre: "Academia del Piacere",
+        fecha: new Date(2024, 5, 9),
+        enlace: "#9",
+      },
+      {
+        nombre: "Le Concert des Nations & Jordi Savall",
+        fecha: new Date(2024, 5, 9),
+        enlace: "#9",
+      },
+      {
+        nombre: "Compañia Nacional de Danza",
+        fecha: new Date(2024, 5, 15),
+        enlace: "#15",
+      },
+      {
+        nombre: "Orquesta Sinfónica RTVE",
+        fecha: new Date(2024, 5, 16),
+        enlace: "#16",
+      },
+      { nombre: "Trío Arbós", fecha: new Date(2024, 5, 17), enlace: "#17" },
+      {
+        nombre: "Israel Galván & Benjamin Alard",
+        fecha: new Date(2024, 5, 18),
+        enlace: "#18",
+      },
+      {
+        nombre: "Bernard Foccroulle & Lambert Colson",
+        fecha: new Date(2024, 5, 19),
+        enlace: "#19",
+      },
+      {
+        nombre: "Orquesta Ciudad de Granada",
+        fecha: new Date(2024, 5, 20),
+        enlace: "#20",
+      },
+      { nombre: "David Palomar", fecha: new Date(2024, 5, 20), enlace: "#20" },
+      { nombre: "Montse Cortéz", fecha: new Date(2024, 5, 21), enlace: "#21" },
+      {
+        nombre: "Orquesta Freixenet de la Escuela Reina Sofía",
+        fecha: new Date(2024, 5, 21),
+        enlace: "#21",
+      },
+      {
+        nombre: "Compañía Blanca Li",
+        fecha: new Date(2024, 5, 21),
+        enlace: "#21",
+      },
+      { nombre: "Benjamin Alard", fecha: new Date(2024, 5, 22), enlace: "#22" },
+      { nombre: "Seong-Jin Cho", fecha: new Date(2024, 5, 22), enlace: "#22" },
+      { nombre: "O Sister!", fecha: new Date(2024, 5, 22), enlace: "#22" },
+      {
+        nombre: "Cuarteto Quiroga",
+        fecha: new Date(2024, 5, 23),
+        enlace: "#23",
+      },
+      {
+        nombre: "Wiener Philharmoniker",
+        fecha: new Date(2024, 5, 23),
+        enlace: "#23",
+      },
+      {
+        nombre: "Schumann Quartert",
+        fecha: new Date(2024, 5, 24),
+        enlace: "#24",
+      },
+      { nombre: "Paul Lewis I", fecha: new Date(2024, 5, 25), enlace: "#25" },
+      { nombre: "Sara Baras", fecha: new Date(2024, 5, 25), enlace: "#25" },
+      { nombre: "Pedro Luengo", fecha: new Date(2024, 5, 26), enlace: "#26" },
+      {
+        nombre: "Orquesta y Coro Nacionales de España",
+        fecha: new Date(2024, 5, 26),
+        enlace: "#26",
+      },
+      {
+        nombre: "Chaplin & Keaton",
+        fecha: new Date(2024, 5, 27),
+        enlace: "#27",
+      },
+      { nombre: "Rocío Molina", fecha: new Date(2024, 5, 27), enlace: "#27" },
+      { nombre: "El Pele", fecha: new Date(2024, 5, 28), enlace: "#28" },
+      { nombre: "Paul Lewis II", fecha: new Date(2024, 5, 28), enlace: "#28" },
+      {
+        nombre: "Compañía Antonio Gades",
+        fecha: new Date(2024, 5, 28),
+        enlace: "#28",
+      },
+      {
+        nombre: "Quartet Gerhard",
+        fecha: new Date(2024, 5, 29),
+        enlace: "#29",
+      },
+      {
+        nombre: "Orchestre de Paris",
+        fecha: new Date(2024, 5, 29),
+        enlace: "#29",
+      },
+      {
+        nombre: "Antonio Serrat Quartet",
+        fecha: new Date(2024, 5, 29),
+        enlace: "#29",
+      },
+      { nombre: "Mario Brunello", fecha: new Date(2024, 5, 30), enlace: "#30" },
+      {
+        nombre: "Orchestre de Paris II",
+        fecha: new Date(2024, 5, 30),
+        enlace: "#30",
+      },
+    ];
+
+    function mostrarEventosDelDia() {
+      const hoy = new Date();
+
+      const eventosHoy = eventos.filter((evento) => {
+        return (
+          evento.fecha.getDate() === hoy.getDate() &&
+          evento.fecha.getMonth() === hoy.getMonth() &&
+          evento.fecha.getFullYear() === hoy.getFullYear()
+        );
+      });
+
+      let html = "<h2>Eventos de hoy:</h2>";
+      if (eventosHoy.length === 0) {
+        html += "<p>No hay eventos para hoy.</p>";
+      } else {
+        eventosHoy.forEach((evento) => {
+          html += `<a href="${evento.enlace}" class="white"><p>${evento.nombre}</p></a>`;
+        });
+      }
+
+      document.getElementById("calendario").innerHTML = html;
+    }
+
+    document.addEventListener("DOMContentLoaded", mostrarEventosDelDia);
+
+    document.addEventListener("DOMContentLoaded", function () {
+      let fecha = new Date();
+      let numeroDia = fecha.getDay();
+      let diasSemana = [
+        "Domingo",
+        "Lunes",
+        "Martes",
+        "Miercoles",
+        "Jueves",
+        "Viernes",
+        "Sábado",
+      ];
+      let nombreDia = diasSemana[numeroDia];
+
+      let elementoDia = document.getElementsByClassName("day")[0];
+
+      elementoDia.innerHTML = nombreDia;
+
+      let fechaEspecifica = new Date();
+      let diaDelMes = fechaEspecifica.getDate();
+      let elementoDiaEspecifico = document.getElementById("numero-dia");
+      elementoDiaEspecifico.innerHTML = diaDelMes;
+    });
+  </script>
+
+  <body>
+    <div class="container">
+      <div class="calendar-base">
+        <!-- Base del calendario -->
+        <div class="year">2024</div>
+        <!-- año -->
+
+        <div class="months">
+          <!-- mes de junio -->
+          <span>Junio</span>
+        </div>
+
+        <hr class="month-line" />
+
+        <div class="days">LU MA MI JU VI SÁ DO</div>
+        <!-- dias de la semana -->
+
+        <div class="num-dates">
+          <!-- mes divido en semanas -->
+          <div class="first-week">
+            <span class="grey">27 28 29 30 31</span> 01 02
+          </div>
+
+          <div class="second-week">
+            03 04 05 06
+            <span class="color"
+              ><a href="#7">07</a> <a href="#8">08</a> <a href="#9">09</a></span
+            >
+          </div>
+          <div class="third-week">
+            10 11 12 13 14
+            <span class="color"><a href="#15">15</a> <a href="#16">16</a></span>
+          </div>
+          <div class="fourth-week">
+            <span class="color"
+              ><a href="#17">17</a> <a href="#18">18</a> <a href="#18">19</a>
+              <a href="#20">20</a> <a href="#21">21</a> <a href="#22">22</a>
+              <a href="#23">23</a>
+            </span>
+          </div>
+
+          <div class="fifth-week">
+            <span class="color"
+              ><a href="#24">24</a> <a href="#25">25</a> <a href="#26">26</a>
+              <a href="#27">27</a> <a href="#28">28</a> <a href="#29">29</a>
+              <a href="#30">30</a></span
+            >
+          </div>
+        </div>
+      </div>
+
+      <div class="calendar-left">
+        <!-- Parte izquierda del calendario -->
+        <div class="num-date">
+          <!--Dia actual -->
+          <span id="numero-dia"> 1 </span>
+        </div>
+
+        <div class="day">THURSDAY</div>
+        <!--Dia de la semana -->
+
+        <div class="current-events">
+          <!-- Eventos que haya -->
+          <ul>
+            <li id="calendario"></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="all-events">
+      <!--Todos los eventos-->
+      <ul id="7">
+        <li class="grande">7 de Junio</li>
+        <!--Lista con sublista con el dia y su evento-->
+        <ul>
+          <li><a href="">Gustav Mahler Jugendorchester</a></li>
+        </ul>
+      </ul>
+      <ul id="8">
+        <li class="grande">8 de Junio</li>
+        <ul>
+          <li><a href="">Ballet Nacional de España</a></li>
+        </ul>
+      </ul>
+      <ul id="9">
+        <li class="grande">9 de Junio</li>
+        <ul>
+          <li><a href="">Academia del Piacere</a></li>
+          <li><a href="">Le Concert des Nations & Jordi Savall</a></li>
+        </ul>
+      </ul>
+      <ul id="15">
+        <li class="grande">15 de Junio</li>
+        <ul>
+          <li><a href="">Compañia Nacional de Danza</a></li>
+        </ul>
+      </ul>
+      <ul id="16">
+        <li class="grande">16 de Junio</li>
+        <ul>
+          <li><a href="">Orquesta Sinfónica RTVE</a></li>
+        </ul>
+      </ul>
+      <ul id="17">
+        <li class="grande">17 de Junio</li>
+        <ul>
+          <li><a href="">Trío Arbós</a></li>
+        </ul>
+      </ul>
+      <ul id="18">
+        <li class="grande">18 de Junio</li>
+        <ul>
+          <li><a href="">Israel Galván & Benjamin Alard</a></li>
+        </ul>
+      </ul>
+      <ul id="19">
+        <li class="grande">19 de Junio</li>
+        <ul>
+          <li><a href="">Bernard Foccroulle & Lambert Colson</a></li>
+        </ul>
+      </ul>
+      <ul id="20">
+        <li class="grande">20 de Junio</li>
+        <ul>
+          <li><a href="">Orquesta Ciudad de Granada</a></li>
+          <li><a href="">David Palomar</a></li>
+        </ul>
+      </ul>
+      <ul id="21">
+        <li class="grande">21 de Junio</li>
+        <ul>
+          <li><a href="">Montse Cortéz</a></li>
+          <li><a href="">Orquesta Freixenet de la Escuela Reina Sofía</a></li>
+          <li><a href="">Compañía Blanca Li</a></li>
+        </ul>
+      </ul>
+      <ul id="22">
+        <li class="grande">22 de Junio</li>
+        <ul>
+          <li><a href="">Benjamin Alard</a></li>
+          <li><a href="">Seong-Jin Cho</a></li>
+          <li><a href="">O Sister!</a></li>
+        </ul>
+      </ul>
+      <ul id="23">
+        <li class="grande">23 de Junio</li>
+        <ul>
+          <li><a href="">Cuarteto Quiroga</a></li>
+          <li><a href="">Wiener Philharmoniker</a></li>
+        </ul>
+      </ul>
+      <ul id="24">
+        <li class="grande">24 de Junio</li>
+        <ul>
+          <li><a href="">Schumann Quartert</a></li>
+        </ul>
+      </ul>
+      <ul id="25">
+        <li class="grande">25 de Junio</li>
+        <ul>
+          <li><a href="">Paul Lewis I</a></li>
+          <li><a href="">Sara Baras</a></li>
+        </ul>
+      </ul>
+      <ul id="26">
+        <li class="grande">26 de Junio</li>
+        <ul>
+          <li><a href="">Pedro Luengo</a></li>
+          <li><a href="">Orquesta y Coro Nacionales de España</a></li>
+        </ul>
+      </ul>
+      <ul id="27">
+        <li class="grande">27 de Junio</li>
+        <ul>
+          <li><a href="">Chaplin & Keaton</a></li>
+          <li><a href="">Rocío Molina</a></li>
+        </ul>
+      </ul>
+      <ul id="28">
+        <li class="grande">28 de Junio</li>
+        <ul>
+          <li><a href="">El Pele</a></li>
+          <li><a href="">Paul Lewis II</a></li>
+          <li><a href="">Compañía Antonio Gades</a></li>
+        </ul>
+      </ul>
+      <ul id="29">
+        <li class="grande">29 de Junio</li>
+        <ul>
+          <li><a href="">Quartet Gerhard</a></li>
+          <li><a href="">Orchestre de Paris</a></li>
+          <li><a href="">Antonio Serrat Quartet</a></li>
+        </ul>
+      </ul>
+      <ul id="30">
+        <li class="grande">30 de Junio</li>
+        <ul>
+          <li><a href="">Mario Brunello</a></li>
+          <li><a href="">Orchestre de Paris II</a></li>
+        </ul>
+      </ul>
+    </div>
+  </body>
+</html>
