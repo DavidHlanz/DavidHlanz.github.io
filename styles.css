@@ -8,12 +8,12 @@ body {
 .calendar-base {
   width: 100%;
   max-width: 900px;
-  height: 500px;
+  height: 600px;
   border-radius: 20px;
   background-color: white;
   color: black;
-  margin: 0 auto; /* Centrar horizontalmente */
-  overflow: hidden; /* Evitar la barra de desplazamiento horizontal */
+  margin: 0 auto;
+  overflow: hidden;
 }
 
 .container {
@@ -37,14 +37,31 @@ body {
   position: relative;
   font-size: 25px;
   left: 770px;
-  top: 90px;
+  top: 70px;
+  word-spacing: 10px;
+}
+
+.month2 {
+  color: #aaaaaa;
+  position: relative;
+  font-size: 25px;
+  left: 770px;
+  top: 325px;
   word-spacing: 10px;
 }
 
 .month-line {
   border-color: #e8e8e8;
   position: relative;
-  top: 85px;
+  top: 65px;
+  width: 57%;
+  left: 178px;
+}
+
+.month-line2 {
+  border-color: #e8e8e8;
+  position: relative;
+  top: 125px;
   width: 57%;
   left: 178px;
 }
@@ -54,7 +71,17 @@ body {
   position: relative;
   font-size: 18px;
   left: 355px;
-  top: 80px;
+  top: 65px;
+  word-spacing: 53px;
+  font-weight: 600;
+}
+
+.day2 {
+  color: #aaaaaa;
+  position: relative;
+  font-size: 18px;
+  left: 355px;
+  top: 125px;
   word-spacing: 53px;
   font-weight: 600;
 }
@@ -62,7 +89,7 @@ body {
 .num-dates {
   float: right;
   position: relative;
-  top: 110px;
+  top: 95px;
   right: 55px;
   z-index: 1;
 }
@@ -92,6 +119,16 @@ body {
   word-spacing: 55px;
 }
 
+.sixth-week {
+  margin-top: 40px;
+  word-spacing: 55px;
+}
+
+.seventh-week {
+  margin-top: 25px;
+  word-spacing: 55px;
+}
+
 .color a {
   text-decoration: none;
   color: inherit;
@@ -118,13 +155,13 @@ body {
 
 .calendar-left {
   width: 300px;
-  height: 500px;
+  height: 600px;
   border-radius: 20px 0px 0px 20px;
   background-color: #ff1649;
   position: relative;
   /*z-index: -1;*/
   color: white;
-  bottom: 500px;
+  bottom: 600px;
 }
 
 .num-date {
@@ -163,7 +200,7 @@ body {
 .all-events {
   position: absolute;
   left: 15%;
-  margin-top: -450px;
+  margin-top: -575px;
 }
 .grande {
   font-size: 20px;
